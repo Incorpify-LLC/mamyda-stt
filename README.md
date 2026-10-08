@@ -2,8 +2,9 @@
 
 Reusable, self-hosted speech-to-text API for Mamyda and other applications.
 
-**Status:** architecture and repository foundation only. No runnable service or
-production deployment is included yet.
+**Status:** early implementation. An authenticated discovery API, durable queue
+core and CPU benchmark CLI are implemented. Upload/transcription HTTP routes and
+the processing worker are not enabled yet; this is not a production STT service.
 
 ## Planned capabilities
 
@@ -24,7 +25,21 @@ workloads but has less headroom. No GPU is required for whisper.cpp; transcripti
 latency must be measured on representative recordings before choosing a default.
 Larger inference and neural enhancement can run on a separate provider host.
 
-See [Architecture and implementation plan](docs/architecture.md).
+See [Architecture and implementation plan](docs/architecture.md) and
+[development/benchmark instructions](docs/development.md).
+
+## Build and test
+
+```sh
+python3 -m venv .venv
+.venv/bin/pip install -r requirements-dev.lock
+.venv/bin/pip install --no-deps -e .
+.venv/bin/pytest -q
+.venv/bin/ruff check .
+```
+
+CI tests Python 3.11, 3.13 and 3.14. Model inference is benchmarked separately on
+the target host; unit tests do not download weights or call paid providers.
 
 ## Development approach
 

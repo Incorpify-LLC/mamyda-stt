@@ -20,3 +20,7 @@ models/
 *.sqlite*
 *.db
 *.log
+*.egg-info/
+benchmark-results/
+.coverage
+htmlcov/
