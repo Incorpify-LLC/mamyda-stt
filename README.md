@@ -27,6 +27,8 @@ Larger inference and neural enhancement can run on a separate provider host.
 
 See [Architecture and implementation plan](docs/architecture.md) and
 [development/benchmark instructions](docs/development.md).
+An initial [ARM CPU baseline](docs/benchmark-baseline.md) is available; representative
+meeting-quality and sustained-load checks are still pending.
 
 ## Build and test
 

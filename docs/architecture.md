@@ -1,6 +1,7 @@
 # Speech-to-text service architecture
 
-Status: proposed; benchmark before installing a production service.
+Status: early foundation implemented; see [measured CPU baseline](benchmark-baseline.md).
+Representative recording validation remains required before production deployment.
 
 ## Deployment boundary
 
